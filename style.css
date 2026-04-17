@@ -1,0 +1,149 @@
+*
+{
+  box-sizing: border-box;
+}
+
+body 
+{
+  font-family: Arial, sans-serif;
+  background-color: #92a1cf;
+  margin: 0;
+}
+
+/* Title */
+h1
+{
+  text-align: center;
+  color: #367588;
+}
+
+/*Form box */
+form 
+{
+  width: 60%;
+  margin: 30px auto;
+  background: white;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Table Fix */
+table
+{
+  border-collapse: collapse;
+  width:100%;
+}
+
+td
+{
+  padding: 8px;
+  vertical-align: top;
+}
+
+td:first-child
+{
+  vertical-align: top;
+  font-weight: bold;
+}
+/* Labels */
+label
+{
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Input */
+input,select
+{
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Submit button */
+input[type="submit"]
+{
+  background-color: #40E0D0;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover
+{
+  background-color: #2a4d69;
+}
+
+/*Checkbox & radio fix */
+input[type="checkbox"],
+input[type="radio"]
+{
+  width: auto;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.option-group label
+{
+  display: block;
+  white-space: nowrap;
+  font-weight: normal;
+  margin-right: 15px;
+}
+
+tr
+{
+  height: 50px;
+}
+
+#header, #todayDate
+{
+  text-align: center;
+  padding-top: 20px
+}
+
+/* Logo size */
+.logo
+{
+  width: 150px;
+  height: auto;
+}
+
+/* Review Section Styling */
+#reviewSection
+{
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: #f9f9f9;
+}
+
+#reviewSection h2
+{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#reviewSection p
+{
+  font-size: 16px;
+  padding: 5px 0;
+}
+#reviewBtn
+{
+  width: 100%;
+  font-size: 18px;
+  padding: 12px;
+  background-color: #48c4b7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+ 

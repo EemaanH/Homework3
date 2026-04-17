@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--
+Program name: patient-form.html
+Author: Erhafiz
+Date created: 2/25/2026
+Date last edited: 2/27/2026
+Version: 1.0
+Description:  basic Patient registration form (BETA)
+--> 
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Patient Registration</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!--HEADER -->
+  <div id="header">
+    
+  <img src="Logo.png" class="logo">
+    
+  <h1>Patient Registration</h1>
+    
+  <p id="todayDate"></p>
+  
+</div>
+
+<!--FORM SECTION -->
+  <div id="main">
+    <form action="thankyou.html">
+
+      <table>
+
+  <!--NAME ROW -->
+  <!-- new pattern and Title -->
+        <tr>
+        <td align="right">
+        <label for="firstname">First Name</label>
+        </td>
+        <td>
+        <input type="text" size="25" maxlength="30" 
+            id="firstname" name="firstname"
+            placeholder="(John/Jane)"
+            pattern="[A-Za-z'-]{1,30}"
+            title="1-30 letters, apostrophes or dashes only"
+            required>
+        </td>
+
+        <td align="right">
+        <label for="middleinitial">Middle Initial</label>
+        </td>
+        <td>
+          <input type="text" size="1" maxlength="1" 
+            id="middleinitial" name="middleinitial"
+            pattern="[A-Za-z]{1}"
+            title="Single letter only">
+        </td> 
+
+        <td align="right">
+        <label for="lastname">Last Name</label>
+        </td>
+        <td>
+        <input type="text" size="25" maxlength="30" 
+            id="lastname" name="lastname"
+            placeholder="Doe"
+            pattern="[A-Za-z0-9'-]{1,30}"
+            title="1-30 characters, letters, apostrophes, dashes, numbers allowed"
+            required>
+        </td>
+        </tr>
+<!--DOB & SSN -->
+        <tr>
+          <td align= "right">
+            <label for="dob">Date of Birth</label>
+          </td>
+          <td>
+            <input type="text" size="10" maxlength="10" 
+            id="dob" name="dob" 
+            placeholder="MM/DD/YYYY"
+            pattern="\d{2}/\d{2}/\d{4}"
+            title="Format: MM/DD/YYYY"
+            required>
+           </td>
+          
+          <td align="right">
+          <label for="ssn">Social Security Number</label>
+          </td>
+          <td>
+          <input type="password" size="11" maxlength="11" 
+          id="ssn" name="ssn" 
+          placeholder="XXX-XX-XXXX"
+          pattern="\d{3}-\d{2}-\d{4}" 
+          required>
+          </td>
+         </tr>
+
+        <!--ADDRESS SECTION -->
+    
+        <tr>
+         <td align="right">Address Line 1:</td>
+          <td colspan="5">
+            <input type="text" 
+             name="address1" 
+             maxlength="30" 
+             size="40"
+             placeholder="123 Main Street"
+             pattern=".{2,30}"
+              title="2-30 characters"
+             required>
+          </td>
+          </tr>
+
+        <tr>
+         <td align="right">Address Line 2:</td>
+          <td colspan="5">
+            <input type="text"
+              name="address2"
+              maxlength="30"
+              size="40"
+              placeholder="Apartment, suite, etc.">
+          </td>
+        </tr>
+
+        <tr>
+          <td align="right">City:</td>
+          <td>
+            <input type="text"
+              name="city"
+              maxlength="30"
+              placeholder="Houston"
+              pattern=".{2,30}"
+              title="2-30 characters"
+              required>
+          </td>
+
+          <td align="right">State:</td>
+          <td>
+            <select name="state" required>
+              <option value="">Select</option>
+              <option>AL</option>
+              <option>AK</option>
+              <option>AZ</option>
+              <option>AR</option>
+              <option>AS</option>
+              <option>CA</option>
+              <option>CO</option>
+              <option>CT</option>
+              <option>DE</option>
+              <option>DC</option>
+              <option>FL</option>
+              <option>GA</option>
+              <option>GU</option>
+              <option>HI</option>
+              <option>ID</option>
+              <option>IL</option>
+              <option>IN</option>
+              <option>IA</option>
+              <option>KS</option>
+              <option>KY</option>
+              <option>LA</option>
+              <option>ME</option>
+              <option>MD</option>
+              <option>MA</option>
+              <option>MI</option>
+              <option>MN</option>
+              <option>MS</option>
+              <option>MO</option>
+              <option>MT</option>
+              <option>NE</option>
+              <option>NV</option>
+              <option>NH</option>
+              <option>NJ</option>
+              <option>NM</option>
+              <option>NY</option>
+              <option>NC</option>
+              <option>ND</option>
+              <option>MP</option>
+              <option>OH</option>
+              <option>OK</option>
+              <option>OR</option>
+              <option>PA</option>
+              <option>PR</option>
+              <option>RI</option>
+              <option>SC</option>
+              <option>SD</option>
+              <option>TN</option>
+              <option>TX</option>
+              <option>TT</option>
+              <option>UT</option>
+              <option>VT</option>
+              <option>VA</option>
+              <option>VI</option>
+              <option>WA</option>
+              <option>WV</option>
+              <option>WI</option>
+              <option>WY</option>
+              
+            </select>
+          </td>
+
+          <td align="right">Zip:</td>
+          <td>
+            <input type="text"
+              name="zip"
+              maxlength="10"
+              placeholder="77002"
+              pattern="\d{5}(-\d{4})?"
+              title="5 digit zip or zip+4"
+              required>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="right">Email:</td>
+          <td>
+            <input type="email"
+              name="email"
+              size="25"
+              maxlength="50"
+              placeholder="name@gmail.com"
+              pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+              title="Enter a valid email like name@domain.com"
+              required>
+            </td>
+        </tr>
+
+        <tr>
+        <td align="right">Phone:</td>
+        <td>
+          <input type="text"
+            name="phone"
+            maxlength="12"
+            placeholder="123-456-7890"
+            pattern="\d{3}-\d{3}-\d{4}">
+        </td>
+      </tr>
+        
+<!--Slider Section -->
+      <tr>
+        <td align="right">Health Rating (1-10):</td>
+        <td colspan="5">
+          1
+          <input type="range"
+            name="health_rating"
+            min="1"
+            max="10"
+            value="5"
+            required>
+          10
+        </td>
+      </tr>
+
+        <!--Description of symptoms -->
+      <tr>
+          <td align="right">Describe your current symptoms:</td>
+          <td colspan="5">
+            <textarea name="symptoms"
+                      rows="3"
+                      cols="50"
+                      placeholder="Please describe any symptoms you are currently experiencing..."></textarea>
+          </td>
+      </tr>
+
+        <!--Medical History -->
+        <tr>
+          <td align="right" valign="top">
+          <label>Medical History</label>
+          </td>
+          
+          <td colspan="5">
+            <div class="option-group">
+            <label><input type="checkbox" name="history" value="diabetes"> Diabetes</label>
+            <label><input type="checkbox" name="history" value="hypertension"> High Blood Pressure</label>
+            <label><input type="checkbox" name="history" value="asthma"> Asthma</label>
+            <label><input type="checkbox" name="history" value="heart"> Heart Disease</label>
+            <label><input type="checkbox" name="history" value="allergies"> Allergies</label>
+            <label><input type="checkbox" name="history" value="mental"> Depression/Anxiety</label>
+            <label><input type="checkbox" name="history" value="arthritis"> Arthritis</label>
+            </div>
+          </td>
+        </tr>
+
+        <!--Gender -->
+        <tr>
+          <td align="right" valign="top">
+          <label>Gender</label>
+          </td>
+          
+          <td>
+            <div class="option-group">
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+            </div>
+          </td>
+        </tr>
+
+        <!--Vaccination Status -->
+        <tr>
+          <td align="right" valign="top">
+          <label>Have you been vaccinated?</label>
+          </td>
+          
+          <td>
+            <div class="option-group">
+            <label><input type="radio" name="vaccinated" value="yes" required> Yes</label>
+            <label><input type="radio" name="vaccinated" value="no"> No</label>
+            </div>
+          </td>
+        </tr>
+
+        <!--Insurance Status -->
+        <tr>
+          <td align="right" valign="top">
+          <label>Do you have insurance?</label>
+          </td>
+          
+          <td>
+            <div class="option-group">
+            <label><input type="radio" name="insurance" value="yes" required> Yes</label>
+            <label><input type="radio" name="insurance" value="no"> No</label>
+            </div>
+          </td>
+        </tr>
+
+        <!--User Account Information -->
+
+        <tr>
+          <td align="right">Create User ID:</td>
+          <td>
+            <input type="text"
+              name="userid"
+              maxlength="20"
+              placeholder="Choose a username"
+              pattern="^[A-Za-z][A-Za-z0-9_-]{4,29}$"
+              title="5-30 characters, must start with a letter, no spaces"
+              required>
+          </td>
+        </tr>
+        
+        <tr>
+          <td align="right">Create Password:</td>
+          <td>
+            <input type="password"
+              name="password"
+              maxlength="20"
+              placeholder="Enter password"
+              pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#%^&*()\-_=+\\/><.,`~])[A-Za-z\d!@#%^&*()\-_=+\\/><.,`~]{8,30}$"
+              title="8-30 chars, include uppercase, lowercase, number, special character"
+              required>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="right">Re-enter Password:</td>
+          <td>
+            <input type="password"
+              name="confirm_password"
+              maxlength="20"
+              placeholder="Re-enter password"
+              required>
+          </td>
+        </tr>
+        
+        <!--Reset AND Submit button -->
+
+        <tr>
+          <td colspan="6" align="center">
+            <input type="reset" value="CLEAR AND START OVER">
+
+            <br><br>
+            <!--Newly added Review button -->
+            <button type="button" id="reviewBtn" onclick="reviewData(); return false;">Review</button>
+
+            <br><br>
+            
+            <input type="submit" value="Submit">
+          </td>
+        </tr>
+
+      </table>
+    </form>
+    <!-- Newly added Review Section -->
+    <div id="reviewSection">
+      <h2>PLEASE REVIEW THIS INFORMATION</h2>
+
+      <p><span id="r_name"></span></p>
+      <p><span id="r_dob"></span></p>
+      <p><span id="r_email"></span></p>
+      <p><span id="r_phone"></span></p>
+      <p><span id="r_address"></span></p>
+  </div>
+
+  </div>
+
+  <!--Footer -->
+        <div id="footer">
+          <p><strong>HealthIsWealth Medical</strong></p>
+
+          <p>PO BOX 67676</p>
+          <p>Fannin, TX, 12345</p>
+
+          <br>
+          <button>Contact Us</button>
+
+          <br><br>
+
+          <a href="#">Facebook</a> |
+          <a href="#">Instagram</a>
+
+        </div>
+
+<script src="./script.js"></script>
+</body>
+</html>
