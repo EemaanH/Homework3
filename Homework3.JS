@@ -54,7 +54,7 @@ function validateLastName()
 //DOB 
 function validateDOB()
 {
-  let dob = document.getElementById("dob).value;
+  let dob = document.getElementById("dob").value;
   let entered = new Date(dob);
   let now = new Date();
   let oldest = new Date();
@@ -85,7 +85,7 @@ document.getElementById("ssn").addEventListener("input", function(e)
 {
   let value = e.target.value.replace(/\D/g, "");
 
-  if(value.length > 3 && value.length <=5
+  if(value.length > 3 && value.length <=5)
   {
     value = value.slice(0,3) + "-" + value.slice(3);
   }
@@ -105,7 +105,7 @@ function validateSSN()
       showError("ssnError", "❌ Format needs to be XXX-XX-XXXX");
       return false;
     }
-    clearError("ssnError);
+    clearError("ssnError");
     return true;
 }
 
@@ -141,7 +141,7 @@ function validateZip()
   let val = document.querySelector('[name="zip"]').value;
   if (!/^\d{5}$/.test(val))
     {
-      showError("zipError", "❌ 5 digits only);
+      showError("zipError", "❌ 5 digits only");
       return false;
     }
     clearError("zipError");
@@ -157,7 +157,7 @@ function validateEmail()
     ShowError("emailError", "❌ Invalid email");
     return false;
   }
-  clearedError("emailError");
+  clearError("emailError");
   return true;
 }
 
@@ -165,7 +165,7 @@ function validateEmail()
 function validateUserID()
 {
   let val = document.querySelector('[name="userid"]').value;
-  if (!/^A-Za-z0-9_-]{4,19}$/.test(val))
+  if (!/^[A-Za-z][A-Za-z0-9_-]{4,19}$/.test(val))
     {
       showError("userError", "❌ 5-20 chars, start with letter");
       return false;
@@ -231,10 +231,10 @@ function validateForm()
     validateSSN() &&
     validateAddress1() &&
     validateCity() &&
-    validateFZip() &&
+    validateZip() &&
     validateEmail() &&
-    validateUserId() &&
-    validatePassword() &&
+    validateUserID() &&
+    validPassword() &&
     validateConfirmPassword();
 
 document.getElementById("submitBtn").disabled = !valid;
