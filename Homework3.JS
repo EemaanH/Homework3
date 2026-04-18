@@ -237,7 +237,15 @@ function validateForm()
     validPassword() &&
     validateConfirmPassword();
 
-document.getElementById("submitBtn").disabled = !valid;
+  if(valid)
+{
+document.getElementById("submitBtn").style.display = "block";
+}
+else
+{
+document.getElementById("submitBtn").style.display = "none";
+
+}
 
 return valid;
 }
