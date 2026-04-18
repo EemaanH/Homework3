@@ -44,10 +44,10 @@ function validateLastName()
   let val = document.getElementById("lastname").value;
   if (!/^[A-Za-z'-]{1,30}$/.test(val))
     {
-      showError("lastnameError"), "❌ Invalid (letters, ' - only)");
+      showError("lastnameError", "❌ Invalid (letters, ' - only)");
       return false;
     }
-    clearError("lastnameError);
+    clearError("lastnameError");
     return true;
 }
 
@@ -154,7 +154,7 @@ function validateEmail()
   let val = document.querySelector('[name="email"]').value.toLowerCase();
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val))
   {
-    ShowError("emailError", "❌ Invalid email");
+    showError("emailError", "❌ Invalid email");
     return false;
   }
   clearError("emailError");
