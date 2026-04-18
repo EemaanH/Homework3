@@ -44,7 +44,9 @@ Description:  basic Patient registration form (BETA)
             placeholder="(John/Jane)"
             pattern="[A-Za-z'-]{1,30}"
             title="1-30 letters, apostrophes or dashes only"
+            oninput="validateFirstName(); validateForm();"
             required>
+          <span id="firstnameError" class="error"></span>
         </td>
 
         <td align="right">
@@ -66,7 +68,9 @@ Description:  basic Patient registration form (BETA)
             placeholder="Doe"
             pattern="[A-Za-z0-9'-]{1,30}"
             title="1-30 characters, letters, apostrophes, dashes, numbers allowed"
+            oninput="validateLastName(); validateForm();"
             required>
+          <span id="lastnameError" class="error"></span>
         </td>
         </tr>
 <!--DOB & SSN -->
@@ -80,7 +84,9 @@ Description:  basic Patient registration form (BETA)
             placeholder="MM/DD/YYYY"
             pattern="\d{2}/\d{2}/\d{4}"
             title="Format: MM/DD/YYYY"
+            oninput="validateDOB(); validateForm();"
             required>
+            <span id="dobError" class="error"></span>
            </td>
           
           <td align="right">
@@ -91,7 +97,9 @@ Description:  basic Patient registration form (BETA)
           id="ssn" name="ssn" 
           placeholder="XXX-XX-XXXX"
           pattern="\d{3}-\d{2}-\d{4}" 
+          oninput="validateSSN(); validateForm();"
           required>
+            <span id="ssnError" class="error"></span>
           </td>
          </tr>
 
@@ -106,8 +114,10 @@ Description:  basic Patient registration form (BETA)
              size="40"
              placeholder="123 Main Street"
              pattern=".{2,30}"
-              title="2-30 characters"
+             title="2-30 characters"
+             oninput="validateAddress1(); validateForm();"
              required>
+            <span id="addressError" class="error"></span>
           </td>
           </tr>
 
@@ -131,7 +141,9 @@ Description:  basic Patient registration form (BETA)
               placeholder="Houston"
               pattern=".{2,30}"
               title="2-30 characters"
+              oninput="validateCity(); validateForm();"
               required>
+            <span id="cityError" class="error"></span>
           </td>
 
           <td align="right">State:</td>
@@ -207,7 +219,9 @@ Description:  basic Patient registration form (BETA)
               placeholder="77002"
               pattern="\d{5}(-\d{4})?"
               title="5 digit zip or zip+4"
+              oninput="validateZip(); validateForm();"
               required>
+              <span id="zipError" class="error"></span>
           </td>
         </tr>
 
@@ -221,7 +235,9 @@ Description:  basic Patient registration form (BETA)
               placeholder="name@gmail.com"
               pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
               title="Enter a valid email like name@domain.com"
+              oninput="validateEmail(); validateForm();"
               required>
+            <span id="emailError" class="error"></span>
             </td>
         </tr>
 
@@ -247,7 +263,7 @@ Description:  basic Patient registration form (BETA)
             max="10"
             value="5"
             required>
-          10
+           <span id="sliderValue">5</span>
         </td>
       </tr>
 
@@ -335,7 +351,9 @@ Description:  basic Patient registration form (BETA)
               placeholder="Choose a username"
               pattern="^[A-Za-z][A-Za-z0-9_-]{4,29}$"
               title="5-30 characters, must start with a letter, no spaces"
+              oninput="validateUserID(); validateForm();"
               required>
+              <span id="userError" class="error"></span>
           </td>
         </tr>
         
@@ -348,7 +366,9 @@ Description:  basic Patient registration form (BETA)
               placeholder="Enter password"
               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#%^&*()\-_=+\\/><.,`~])[A-Za-z\d!@#%^&*()\-_=+\\/><.,`~]{8,30}$"
               title="8-30 chars, include uppercase, lowercase, number, special character"
+              oninput="validPassword(); validateForm();"
               required>
+              <span id="passwordError" class="error"></span>
           </td>
         </tr>
 
@@ -359,7 +379,9 @@ Description:  basic Patient registration form (BETA)
               name="confirm_password"
               maxlength="20"
               placeholder="Re-enter password"
+              oninput="validateConfirmPassword(); validateForm();"
               required>
+            <span id="confirmError" class="error"></span>
           </td>
         </tr>
         
@@ -371,11 +393,10 @@ Description:  basic Patient registration form (BETA)
 
             <br><br>
             <!--Newly added Review button -->
-            <button type="button" id="reviewBtn" onclick="reviewData(); return false;">Review</button>
-
+            <button type="button" onclick="validateForm()">VALIDATE</button>
             <br><br>
             
-            <input type="submit" value="Submit">
+            <input type="submit" id="submitBtn" value="Submit" style="display:none;">
           </td>
         </tr>
 
